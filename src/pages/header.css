@@ -1,0 +1,122 @@
+.news a {
+    font-size: 30px;
+    color: #191970;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Размещение элементов по горизонтали */
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #fff; /* Фон для хедера */
+    z-index: 10; /* Для того, чтобы элементы располагались поверх остального контента */
+    box-sizing: border-box; /* Учитываем отступы внутри контейнера */
+}
+
+.header-left {
+    display: flex;
+    gap: 10px;
+}
+
+.home-button {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 40px;
+}
+
+.header button {
+    font-size: 16px;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: none;
+    border: 2px solid #191970;
+    border-radius: 25px;
+}
+
+/* Контейнер для коллекций */
+.collections-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Показывать коллекции только если showCollections = true */
+.collections-container.show {
+    display: flex;
+}
+
+/* Стили для кнопок коллекций */
+.collection {
+    margin: 10px; /* Отступ между элементами */
+
+}
+
+.collection button {
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: #191970;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.collection button:hover {
+    background-color: #4682b4;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 768px) {
+    /* Оставляем кнопки "Домик" и "NEWS" всегда видимыми */
+    .header-left {
+        display: flex;
+        gap: 10px;
+    }
+
+    .header {
+        flex-direction: column; /* Размещаем элементы по вертикали на мобильных */
+        align-items: flex-start; /* Размещаем по левому краю */
+    }
+
+    .news {
+        font-size: 16px;
+        left: 5%; /* Меньший отступ для мобильных экранов */
+    }
+
+    .home-button {
+        margin-top: 10px; 
+        font-size: 40px;
+    }
+
+    /* Кнопка для отображения коллекций */
+    .toggle-collections-button {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* Скрыть коллекции, пока не нажмут на кнопку */
+    .collections-container {
+        display: none;
+    }
+
+    /* Показывать коллекции, если showCollections = true */
+    .collections-container.show {
+        display: flex;
+    }
+
+    /* Стили для коллекций в мобильной версии */
+    .collection {
+        flex: 1 0 100%; /* На мобильных устройствах кнопки будут широкими */
+    }
+}
